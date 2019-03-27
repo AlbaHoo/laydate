@@ -68,7 +68,7 @@
     v: '5.0.9'
     ,config: {} //全局配置项
     ,index: (window.laydate && window.laydate.v) ? 100000 : 0
-    ,path: ready.getPath
+    ,path: ''
 
     //设置全局项
     ,set: function(options){
