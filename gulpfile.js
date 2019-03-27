@@ -23,11 +23,11 @@ var task = {
     }))
     .pipe(header('/*! <%= pkg.realname %>-v<%= pkg.version %> <%= pkg.description %> <%= pkg.license %> License  <%= pkg.homepage %>  By <%= pkg.author %> */\n', {pkg: pkg}))
     .pipe(gulp.dest('./dist'));
-    
+
     return gulp.src('./src/laydate.js').pipe(uglify())
      .pipe(header('/*! <%= pkg.realname %>-v<%= pkg.version %> <%= pkg.description %> <%= pkg.license %> License  <%= pkg.homepage %>  By <%= pkg.author %> */\n ;', {pkg: pkg}))
     .pipe(gulp.dest('./dist'));
-    
+
   }
   ,other: function(){
     gulp.src('./src/**/font/*').pipe(rename({}))
@@ -49,7 +49,7 @@ gulp.task('clearZip', function(cb){ //清理
 gulp.task('r', ['clearZip'], function(){
   gulp.src('./release/doc/**/*')
   .pipe(gulp.dest(releaseDir))
-  
+
   return gulp.src('./dist/**/*')
   .pipe(gulp.dest(releaseDir + '/laydate'))
 });
